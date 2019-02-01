@@ -33,16 +33,16 @@ line   : exp '='           {last = $1;
        ;
 exp    : '-' exp            {$$ = -$2; DEBUG {cout<<"-"<<$2<<"="<<"$$"<<"\n";}}
        | '+' exp            {$$ = $2; DEBUG {cout<<"+"<<$2<<"="<<"$$"<<"\n";}}
-       | exp '+' exp  		{$$ = $1 + $3; DEBUG {cout<<$1<<'+'<<$3<<'='<<$$<<"\n";}}
-       | exp '-' exp		{$$ = $1 - $3; DEBUG {cout<<$1<<'-'<<$3<<'='<<$$<<"\n";}}
-       | exp '*' exp		{$$ = $1 * $3; DEBUG {cout<<$1<<'x'<<$3<<'='<<$$<<"\n";}}
-       | exp '/' exp		{$$ = $1 / $3; DEBUG {cout<<$1<<'/'<<$3<<'='<<$$<<"\n";}}
-       | exp '^' exp		{$$ = pow($1, $3); DEBUG {cout<<$1<<'^'<<$3<<'='<<$$<<"\n";}}
+       | exp '+' exp        {$$ = $1 + $3; DEBUG {cout<<$1<<'+'<<$3<<'='<<$$<<"\n";}}
+       | exp '-' exp        {$$ = $1 - $3; DEBUG {cout<<$1<<'-'<<$3<<'='<<$$<<"\n";}}
+       | exp '*' exp        {$$ = $1 * $3; DEBUG {cout<<$1<<'x'<<$3<<'='<<$$<<"\n";}}
+       | exp '/' exp        {$$ = $1 / $3; DEBUG {cout<<$1<<'/'<<$3<<'='<<$$<<"\n";}}
+       | exp '^' exp        {$$ = pow($1, $3); DEBUG {cout<<$1<<'^'<<$3<<'='<<$$<<"\n";}}
        | exp 'e' exp        {$$ = $1 * pow(10, $3); DEBUG {cout<<$1<<'e'<<$3<<'='<<$$<<"\n";}}
-       | exp '%'			{$$ = $1/100.0;}
-       | '(' exp ')'		{$$ = $2;}
-       | number      		{$$ = $1;}
-       | '~'				{$$ = last; DEBUG {cout<<"use the result of last expr: "<<last<<"\n";}}
+       | exp '%'            {$$ = $1/100.0;}
+       | '(' exp ')'        {$$ = $2;}
+       | number             {$$ = $1;}
+       | '~'                {$$ = last; DEBUG {cout<<"use the result of last expr: "<<last<<"\n";}}
        ;
 %%
 

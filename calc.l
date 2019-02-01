@@ -16,12 +16,12 @@ using namespace std;
                          DEBUG {cout<<yytext<<"\n";}
                          return number;}
 [ \t\n]                 ;
-[-+*/^%()=~e]            {return yytext[0];}
-[#]					    {BEGIN COMMENT;}
+[-+*/^%()=~e]           {return yytext[0];}
+[#]                     {BEGIN COMMENT;}
 pi                      {yylval.a_number = PI;
                          return number;}
-<COMMENT>\n				{BEGIN INITIAL;}
-<COMMENT>.				;
+<COMMENT>\n             {BEGIN INITIAL;}
+<COMMENT>.              ;
 .                       {ECHO; yyerror (0, "unexpected character");}
 
 %%
