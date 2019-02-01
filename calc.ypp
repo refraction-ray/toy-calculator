@@ -31,7 +31,9 @@ line   : exp '='           {last = $1;
                             DEBUG{cout<<"~ is saved as "<<last<<"\n";}
 							cout<<"the result is "<<$1<<"\n";}
        ;
-exp    : exp '+' exp  		{$$ = $1 + $3; DEBUG {cout<<$1<<'+'<<$3<<'='<<$$<<"\n";}}
+exp    : '-' exp            {$$ = -$2; DEBUG {cout<<"-"<<$2<<"="<<"$$"<<"\n";}}
+       | '+' exp            {$$ = $2; DEBUG {cout<<"+"<<$2<<"="<<"$$"<<"\n";}}
+       | exp '+' exp  		{$$ = $1 + $3; DEBUG {cout<<$1<<'+'<<$3<<'='<<$$<<"\n";}}
 	   | exp '-' exp		{$$ = $1 - $3; DEBUG {cout<<$1<<'-'<<$3<<'='<<$$<<"\n";}}
 	   | exp '*' exp		{$$ = $1 * $3; DEBUG {cout<<$1<<'x'<<$3<<'='<<$$<<"\n";}}
 	   | exp '/' exp		{$$ = $1 / $3; DEBUG {cout<<$1<<'/'<<$3<<'='<<$$<<"\n";}}

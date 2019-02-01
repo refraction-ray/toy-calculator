@@ -8,7 +8,7 @@ Features explored in this demo include:
 * Precedence and associativity in yacc
 * Pass parameters into yyparse() and yylex()
 
-## Quick Start
+### Quick Start
 
 ```bash
 $ make all
