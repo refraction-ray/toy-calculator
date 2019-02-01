@@ -13,8 +13,8 @@ using namespace std;
 %%
 
 [0-9\.]+                {yylval.a_number = atof(yytext);
-						 DEBUG {cout<<yytext<<"\n";}
-						 return number;}
+                         DEBUG {cout<<yytext<<"\n";}
+                         return number;}
 [ \t\n]                 ;
 [-+*/^%()=~e]            {return yytext[0];}
 [#]					    {BEGIN COMMENT;}
@@ -28,5 +28,5 @@ pi                      {yylval.a_number = PI;
 
 int yywrap(void)
 {
-	return 1;
+    return 1;
 }
