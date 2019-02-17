@@ -28,5 +28,3 @@ $ ./genexe
 
 For a live demo of the program, see [here](http://showterm.io/f0c90e76c3437f1f37dbb).
 
-<iframe src="http://showterm.io/f0c90e76c3437f1f37dbb"></iframe>
-
